@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
-import Button from "react-bootstrap/Button";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -11,6 +11,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
@@ -62,55 +63,13 @@ export default function Weather(props) {
                 </div>
               </div>
             </form>
-            <div className="overview">
-              <h1 id="city">{weatherData.city}</h1>
-              <ul>
-                <li id="subheading">
-                  Last updated:{" "}
-                  <span id="date">
-                    <FormattedDate date={weatherData.date} />
-                  </span>
-                </li>
-                <li id="description">{weatherData.description}</li>
-              </ul>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div className="d-flex weather-temperature">
-                  <img
-                    src={weatherData.icon}
-                    alt={weatherData.description}
-                    className="float-left"
-                    id="icon"
-                  />
-                  <div className="float-left">
-                    <strong id="temperature">
-                      {Math.round(weatherData.temperature)}
-                    </strong>
-                    <span className="units">°F</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-6">
-                <ul>
-                  <li>
-                    Humidity: <span id="humidity">{weatherData.humidity}</span>%
-                  </li>
-                  <li>
-                    Wind: <span id="wind">{weatherData.wind}</span> mph
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="weather-forecast" id="forecast"></div>
+            <WeatherInfo data={weatherData} />
+            <WeatherForecast coordinates={weatherData.coordinates} />
           </div>
         </div>
       </div>
     );
   } else {
-    // const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-    // axios.get(apiUrl).then(handleResponse);
     search();
     return "Loading...";
   }
