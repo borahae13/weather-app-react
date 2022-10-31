@@ -6,6 +6,113 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background: rgb(249, 226, 235);
 }
+.container h1 {
+  color: #5e41a7;
+  display: block;
+  font-size: 30px;
+  font-weight: 100px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+.container ul {
+  margin: 0;
+  padding: 0;
+}
+.container li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #e59423;
+  font-size: 20px;
+  font-weight: 150;
+  line-height: 23px;
+}
+.container li::first-letter {
+  text-transform: capitalize;
+}
+.container .weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
+.container .weather-app {
+  padding: 20px;
+  border: 2px solid #7701a5;
+  border-radius: 30px;
+  background-image: linear-gradient(
+    60deg,
+    rgb(255, 214, 217) 29.3%,
+    rgb(255, 214, 232) 67.1%
+  );
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+.container .overview {
+  margin-bottom: 20px;
+}
+.container .weather-temperature img {
+  margin-right: 8px;
+  height: 64px;
+  width: 64px;
+}
+.container .units {
+  color: #5e41a7;
+  line-height: 10px;
+}
+.container .search {
+  color: #d6caf4;
+}
+.container .weather-temperature strong {
+  color: #5e41a7;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 200;
+}
+.container .weather-temperature .units {
+  position: relative;
+  line-height: 1px;
+  font-size: 23px;
+  top: -34px;
+}
+.container .weather-temperature .active {
+  color: #5e41a7;
+  cursor: default;
+}
+.container .weather-temperature .active:hover {
+  text-decoration: none;
+}
+.container .weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #5e41a7;
+}
+.container .weather-forecast-date {
+  font-size: 23px;
+  font-weight: 160px;
+  color: #e98c0a;
+  opacity: 0.5;
+}
+.container .weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+.container .weather-forecast-temperatures {
+  font-size: 13px;
+}
+.container .city {
+  font-weight: bold;
+}
+.container .btn-primary {
+  background-color: #5e41a7;
+}
+.container .btn-primary:hover {
+  background-color: #d6caf4;
+}
+.container a:link {
+  text-decoration: none;
+}
+/* body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background: rgb(249, 226, 235);
+}
 h1 {
   color: #5e41a7;
   display: block;
@@ -110,4 +217,4 @@ li:first-letter {
 }
 a:link {
   text-decoration: none;
-}
+} */ ;
